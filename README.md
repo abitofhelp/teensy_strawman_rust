@@ -2,9 +2,7 @@
 
 A bare-metal **Rust** project that establishes a working build, boot, and runtime
 configuration for the **Teensy 4.1** development board (NXP i.MX RT1062,
-ARM Cortex-M7). It provides a minimal LED blink and an **RTIC `async` tasking**
-blink — proving the toolchain, boot image, and flash chain end-to-end on real
-hardware.
+ARM Cortex-M7). There are two crates: 1) A minimal LED blinking application; and 2) A LED blinking application based on **RTIC `async` tasking**. These crates prove the toolchain, boot image, and flash chain end-to-end on real hardware.
 
 > This is the Rust counterpart of the Ada strawman (`teensy_strawman` /
 > `teensy_strawman_ada`). The two mirror each other to compare the toolchains on
