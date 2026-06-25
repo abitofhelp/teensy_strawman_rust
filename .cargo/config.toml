@@ -1,0 +1,7 @@
+[build]
+target = "thumbv7em-none-eabihf"
+
+[target.thumbv7em-none-eabihf]
+# t4link.x is supplied by teensy4-bsp's `rt` feature (it pulls in imxrt-rt,
+# which generates the i.MX RT boot image + memory map).
+rustflags = ["-C", "link-arg=-Tt4link.x"]

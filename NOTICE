@@ -1,0 +1,43 @@
+teensy_strawman_rust
+Copyright (c) 2026 Michael Gardner, A Bit of Help, Inc.
+Licensed under the BSD 3-Clause License (see LICENSE).
+
+================================================================================
+Third-party material
+================================================================================
+
+This project is built on the Rust embedded ecosystem for the NXP i.MX RT family
+and the Teensy 4. These crates are fetched by Cargo at build time and are NOT
+redistributed in this repository; each is distributed under permissive terms
+(dual MIT OR Apache-2.0 unless noted). Their copyrights remain with their
+respective authors.
+
+  * teensy4-bsp, teensy4-panic, teensy4-pins, teensy4-fcb
+        The teensy4-rs project (https://github.com/mciantyre/teensy4-rs).
+        Provides the board support package, the i.MX RT boot image (FlexSPI
+        Configuration Block / Image Vector Table, via teensy4-fcb), and the
+        panic handler.
+
+  * imxrt-rt, imxrt-hal, imxrt-ral, imxrt-iomuxc, imxrt-dma, imxrt-usbd
+        The imxrt-rs project (https://github.com/imxrt-rs/imxrt-hal).
+        Provides the runtime (boot image generation, memory map, linker script
+        t4link.x) and the hardware abstraction / register access layers.
+
+  * rtic, rtic-monotonics, rtic-core, rtic-common, rtic-time
+        The Real-Time Interrupt-driven Concurrency framework (https://rtic.rs).
+        Provides the async task scheduler and the SysTick monotonic timer used
+        by the tasking binary.
+
+  * cortex-m, cortex-m-rt
+        The rust-embedded project (https://github.com/rust-embedded/cortex-m).
+        Cortex-M core peripheral access and the cycle-delay primitive.
+
+See Cargo.toml and Cargo.lock for the exact crates and resolved versions.
+
+================================================================================
+Reference documents
+================================================================================
+
+NXP and ARM reference documents used during development are NOT redistributed
+in this repository. They are shared with the Ada strawman; see that project's
+docs/teensy/reference/MANIFEST.md for the list and canonical download URLs.

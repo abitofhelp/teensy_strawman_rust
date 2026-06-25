@@ -1,0 +1,27 @@
+# Workspace root for the Teensy 4.1 (i.MX RT1062) bare-metal Rust strawman.
+# Each app is its own crate with a src/main.rs (blink, tasking).
+
+[workspace]
+resolver = "2"
+members  = ["blink", "tasking"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["A Bit of Help, Inc. / Michael Gardner <mjgardner@abitofhelp.com>"]
+license = "BSD-3-Clause"
+
+[workspace.dependencies]
+teensy4-bsp     = { version = "0.5", features = ["rt"] }   # BSP runtime: boot image + t4link.x
+teensy4-panic   = "0.2"
+cortex-m        = "0.7"
+rtic            = { version = "2", features = ["thumbv7-backend"] }
+rtic-monotonics = { version = "1", default-features = false, features = ["cortex-m-systick"] }
+
+# Embedded release profile (profiles are set once, at the workspace root).
+[profile.release]
+opt-level = "s"
+lto       = true
+
+[profile.release.build-override]
+opt-level = 0

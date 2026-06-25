@@ -1,0 +1,13 @@
+[package]
+name        = "tasking"
+description = "Teensy 4.1 RTIC async tasking blink (bare-metal Rust strawman)."
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+teensy4-bsp     = { workspace = true }
+teensy4-panic   = { workspace = true }
+rtic            = { workspace = true }
+rtic-monotonics = { workspace = true }

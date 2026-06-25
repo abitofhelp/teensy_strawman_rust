@@ -1,0 +1,5 @@
+# Pin the toolchain + embedded target + components so local builds and CI match.
+[toolchain]
+channel    = "nightly"
+targets    = ["thumbv7em-none-eabihf"]
+components = ["rustfmt", "clippy", "llvm-tools"]
